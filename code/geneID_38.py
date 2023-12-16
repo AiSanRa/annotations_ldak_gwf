@@ -44,7 +44,7 @@ def write_output(output_file, result):
             csv_writer.writerow([variant_id, gene_id])
 
 if __name__ == '__main__':
-    csv_file = "snps_chr_bp_38.csv"
+    csv_file = "snp_chr_bp_38.csv"
     gtf_folder = 'gtf_38'
     gtf_file = find_gtf_file(gtf_folder)
 
