@@ -28,7 +28,7 @@ def process_csv(gtf_dict, csv_file):
     with open(csv_file, 'r') as file:
         csv_reader = csv.DictReader(file)
         for row in csv_reader:
-            variant_id = row['Variant_ID']
+            variant_id = row[sys.argv[4]
             position = int(row['Position'])
             chromosome = row['Chromosome']
             for gene_id, gene_info in gtf_dict.items():
@@ -44,15 +44,10 @@ def write_output(output_file, result):
             csv_writer.writerow([variant_id, gene_id])
 
 if __name__ == '__main__':
-    csv_file = "snp_chr_bp_38.csv"
-    gtf_folder = 'gtf_38'
-    gtf_file = find_gtf_file(gtf_folder)
-
-    if gtf_file:
-        output_file = 'geneID_38.csv'
-
-        gtf_dict = parse_gtf(gtf_file)
-        result = process_csv(gtf_dict, csv_file)
-        write_output(output_file, result)
-    else:
-        raise ValueError("No GTF file found in the folder.")
+    csv_file = sys.argv[1]
+    gtf_file = sys.argv[2]
+    output_file = sys.argv[3]
+    
+    gtf_dict = parse_gtf(gtf_file)
+    result = process_csv(gtf_dict, csv_file)
+    write_output(output_file, result)

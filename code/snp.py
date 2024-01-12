@@ -1,5 +1,6 @@
 import os
 import csv
+import sys
 from glob import glob
 
 def process_variant_files(var_folder, output_file, variant_ids_file):
@@ -39,9 +40,9 @@ def process_variant_files(var_folder, output_file, variant_ids_file):
         print(f"Number of matched variants: {matched_variants}")
 
 # Specify your input and output files
-var_folder = "variants_37/"
-output_file = "snp_chr_bp_37.csv"
-variant_ids_file = "variants.txt"
+var_folder = sys.argv[2]
+output_file = sys.argv[3]
+variant_ids_file = sys.argv[1]
 
 # Process variant files and write the result to the output file
 process_variant_files(var_folder, output_file, variant_ids_file)

@@ -17,6 +17,6 @@ def process_chromosome_position(input_file, output_file):
     df.to_csv(output_file, sep=",", index=False)
 
 # Example usage
-input_file = "variants.txt"
-output_file = "chr_bp.csv"
+input_file = sys.argv[1]
+output_file = sys.argv[2]
 process_chromosome_position(input_file, output_file)

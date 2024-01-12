@@ -80,6 +80,6 @@ Look at the progress of the pipeline.
 - You must be sure that before running the workflow you have the folders "variants_X" (This might not be needed if do not start with rsID), "gtf_X" and "expression".
 - The Expression file must have a first collumn with the Gene_ID and next collumns should have the expression on different tissues. Each collumn, separated by line split("\t"), should have as index the name of the tissue or name you require.
 - The option to have as an Input: Chr:BP and as an Output: rs_ID is not implemented in this workflow.
-- This code is created to apply LDAK on it so the last output will be an annotation called bld66 inside a subfolder with the name of the tissue whic can be identified in the tissue_info.csv.
+- This code is created to apply LDAK on it so the last output will be an annotation called bld66 inside a subfolder with the name of the tissue which can be identified in the tissue_info.csv.
 
 # Acknowledgments

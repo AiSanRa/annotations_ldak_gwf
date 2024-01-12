@@ -1,0 +1,9 @@
+input_format = "Variant_ID" #Chr:BP
+variant_format_output = "Variant_ID"
+scriptdir = ""
+variants = "path to the variants file"
+chr_bp_path = "path to the vcf folder"
+gen_id = "path to the gtf file"
+exp = "path to the expression file"
+bld_path = "path to the blds folder"
+plink_path = "path to the plink files"
