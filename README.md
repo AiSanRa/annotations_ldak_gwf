@@ -36,12 +36,12 @@ Look at the progress of the pipeline.
 
 # Additional Notes
 
-The option of input as Chr:BP and output as rs_ID is not implemented.\\
-All of the patways must be filled for the workflow to be successful.\\
-It is important to have the folder <code> in the folder where the script is.\\
-The workflow is created using the structure of the VCF and GTF files provided by Ensembl, so in case of using different ones the workflow might not work.\\
-The path to the VCF is to a folder that contains them all. However, the path in the configuration file to the GTF is to the file.\\
-During the mapping of variants, the workflow will just recognise the ones in the format that is specified in the configuration file. If the input file contains a mix of both some will be discarded.\\
-It has to be noticed that during the mapping of variant_IDs with gene_IDs some of the SNPs wont be included if they are intergenic SNPs, as they do not pertain to any gene
+- The option of input as Chr:BP and output as rs_ID is not implemented.
+- All of the patways must be filled for the workflow to be successful.
+- It is important to have the folder code in the folder where the script is.
+- The workflow is created using the structure of the VCF and GTF files provided by Ensembl, so in case of using different ones the workflow might not work.
+- The path to the VCF is to a folder that contains them all. However, the path in the configuration file to the GTF is to the file.
+- During the mapping of variants, the workflow will just recognise the ones in the format that is specified in the configuration file. If the input file contains a mix of both some will be discarded.
+- It has to be noticed that during the mapping of variant_IDs with gene_IDs some of the SNPs wont be included if they are intergenic SNPs, as they do not pertain to any gene.
 
 # Acknowledgments
