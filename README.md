@@ -5,7 +5,7 @@ This workflow proocess files with expression data to files usable as annotation 
 # Overview
 Workflow using gwf (https://gwf.app/#), a workflow tool for building and running large, scientific workflows. It runs on Python 3.7+ and is developed at GenomeDK, Aarhus University.
 
-![Diagram of the annotations and tagging workflow.]()
+![Diagram of the annotations and tagging workflow.](https://github.com/AiSanRa/annotations_ldak_gwf/blob/main/diagram_workflow.jpg)
 
 
 WARNING: this project was created and tested in the close cluster of iPSYCH. It should work perfectly fine outside the cluster but it was not tested.
