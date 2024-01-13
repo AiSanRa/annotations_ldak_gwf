@@ -51,5 +51,5 @@ for line in subfolders:
         cores=8,
     ) <<f'''
     cd {subfolder}
-    sbatch {subfolder}/tags.sh {name} {plink_path}
+    bash {subfolder}/tags.sh {name} {plink_path}
     '''

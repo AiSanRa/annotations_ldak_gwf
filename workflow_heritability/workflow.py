@@ -34,5 +34,5 @@ for line in subfolders:
         cores=8
     ) <<f'''
     cd {subfolder}
-    sbatch {subfolder}/sums.sh {name} {sumsstats} {name}
+    bash {subfolder}/sums.sh {name} {sumsstats} {name}
     '''

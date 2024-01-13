@@ -4,7 +4,9 @@ This workflow proocess files with expression data to files usable as annotation 
 
 # Overview
 Workflow using gwf (https://gwf.app/#), a workflow tool for building and running large, scientific workflows. It runs on Python 3.7+ and is developed at GenomeDK, Aarhus University.
-*EXPLICAR COMO FUNCIONA EL FLOW Y PONER UN DIAGRAMA
+
+![Texto alternativo]("C:\Users\ainoa\Documents\Bioinformatica\3_semestre\Proyecto\Documentos_leer\grafico.pdf")
+
 
 WARNING: this project was created and tested in the close cluster of iPSYCH. It should work perfectly fine outside the cluster but it was not tested.
 
@@ -14,60 +16,18 @@ For more information is highly recommended to go to the gwf install webpage: htt
 
 # Usage
 
-Clone this repostory in the folder where you are going to work on.
+Clone this repostory.
 
     git clone https://github.com/AiSanRa/annotations_ldak_gwf.git
 
-You should then prepare the files inside this folder:
+You should copy the workflow you want to use and also the code folder into your script folder or use the cloned folder.
 
-- Copy your Variant_ids into the folder with the name "variants.txt".
+Fill the config.py file with your options and the pathways that are needed.
 
-**********************************
-Now we should prepare the addicional folder that we might need for the process. This step is OPTIONAL but you must be aware that if you chose to use different files than the ones that are specified here you must:
-- Be sure that the files have the same structure as the ones recommended: line split ("\t"), index of the ids, chromosome, position, etc in the same position, etc.
-- This files must be inside the folders:
-    - variants_37 or variants_38 for the first step to map Variant_Ids to chromosome and position.
-    - gtf_37 or gtf_38, to map Variant_Ids to Gen_Ids.
-
-- Create a folder called: "expression" and introduce your Expression file into the folder. Look at Additional Notes to know the structure that it must have.
-
-After all the preparations are done and the requirements that we can see in the section Additional Notes have been met we can run our workflow. You might give your specific options to the workflow.\
-**GRCh 37:**
-- Input: rs_Id; Output: rs_Id
+The workflows are constructed with gwf, to use them you simply have to run in the terminal where the script you want to execute is:
 
 ```bash
-    gwf run annotations_rsID_37
-```
-- Input: rs_Id; Output: Chr:BP
-
-```bash
-    gwf run annotations_to_chr_bp_37
-```
-
-- Input: Chr:BP; Output: Chr:BP
-
-```bash
-    gwf run annotations_all_chr_bp_38
-```
-
-**GRCh 38:**
-
-- Input: rs_Id; Output: rs_Id
-
-```bash
-    gwf run annotations_rsID_38
-```
-
-- Input: rs_Id; Output: Chr:BP
-
-```bash
-    gwf run annotations_to_chr_bp_38
-```
-
-- Input: Chr:BP; Output: Chr:BP
-
-```bash
-    gwf run annotations_all_chr_bp_38
+    gwf run 
 ```
 
 Look at the progress of the pipeline.
@@ -76,10 +36,12 @@ Look at the progress of the pipeline.
 
 # Additional Notes
 
-- Your first input should always be called Variants.txt, doesnt matter the format the SNP_Ids (rs_Id or Chr:BP) are in. The file can containe additional information, but the Variant_ID must be in the first collumn without indexes. 
-- You must be sure that before running the workflow you have the folders "variants_X" (This might not be needed if do not start with rsID), "gtf_X" and "expression".
-- The Expression file must have a first collumn with the Gene_ID and next collumns should have the expression on different tissues. Each collumn, separated by line split("\t"), should have as index the name of the tissue or name you require.
-- The option to have as an Input: Chr:BP and as an Output: rs_ID is not implemented in this workflow.
-- This code is created to apply LDAK on it so the last output will be an annotation called bld66 inside a subfolder with the name of the tissue which can be identified in the tissue_info.csv.
+The option of input as Chr:BP and output as rs_ID is not implemented.\\
+All of the patways must be filled for the workflow to be successful.\\
+It is important to have the folder <code> in the folder where the script is.\\
+The workflow is created using the structure of the VCF and GTF files provided by Ensembl, so in case of using different ones the workflow might not work.\\
+The path to the VCF is to a folder that contains them all. However, the path in the configuration file to the GTF is to the file.\\
+During the mapping of variants, the workflow will just recognise the ones in the format that is specified in the configuration file. If the input file contains a mix of both some will be discarded.\\
+It has to be noticed that during the mapping of variant_IDs with gene_IDs some of the SNPs wont be included if they are intergenic SNPs, as they do not pertain to any gene
 
 # Acknowledgments

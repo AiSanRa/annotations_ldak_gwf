@@ -5,10 +5,10 @@
 #SBATCH -- 10:00:00
 
 tag_name=$1
-bfile_path=$2
+plink_path=$2
 
 ./ldak5.2.linux --calc-tagging "$tag_name" \
-                --bfile "$bfile_path" \
+                --bfile "$plink_path" \
                 --ignore-weights YES \
                 --power -0.25 \
                 --window-kb 1000 \
