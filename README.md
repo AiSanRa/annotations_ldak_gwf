@@ -1,5 +1,5 @@
 # Annotations for partitioned heritability in LDAK
-Project for the master degree in bioinformatics (PiB) 2023, Aarhus Universitet.
+Project for the master degree in bioinformatics (PiB) 2023/24, Aarhus Universitet.
 This workflow proocess files with expression data to files usable as annotation files for LDAK.
 
 # Overview
