@@ -1,4 +1,5 @@
 import pandas as pd
+import sys
 
 def process_chromosome_position(input_file, output_file):
     # Read the tab-delimited text file into a pandas DataFrame

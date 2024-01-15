@@ -9,6 +9,7 @@ Workflow using gwf (https://gwf.app/#), a workflow tool for building and running
 Diagram of the annotations and tagging workflow.
 
 WARNING: this project was created and tested in the close cluster of iPSYCH. It should work perfectly fine outside the cluster but it was not tested.
+SECOND WARNING: this workflow is not finished yet. There are some errors that are being in process to be fixed.
 
 # Requirements
 Create a new environment to install gwf using conda.
@@ -23,6 +24,8 @@ Clone this repostory.
 You should copy the workflow you want to use and also the code folder into your script folder or use the cloned folder.
 
 Fill the config.py file with your options and the pathways that are needed.
+
+Also, you will need to fill in the upper part of the workflow the name of your account: gwf = Workflow(defaults={"account": "put your account here"})
 
 The workflows are constructed with gwf, to use them you simply have to run in the terminal where the script you want to execute is:
 
@@ -45,3 +48,7 @@ Look at the progress of the pipeline.
 - It has to be noticed that during the mapping of variant_IDs with gene_IDs some of the SNPs wont be included if they are intergenic SNPs, as they do not pertain to any gene.
 
 # Acknowledgments
+
+I would like to give the biggest acknowledge to my supervisor Jakob Grove for his patience, support and great kindness. I learned a lot in this project and a good part was thanks to his guide.
+Also to all my partners and friends in Birc.
+And finally, obviuosly, to me that I worked very hard on this and learned a lot from it.
