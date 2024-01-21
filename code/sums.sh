@@ -9,7 +9,7 @@ sums=$2
 tag_name=$3
 
 ./ldak5.2.linux --sum-hers "$name" \ 
-                --summary "$sums" \
+                --summary <(zcat "$sums") \
                 --tagfile "$tag_name".tagging \
                 --check-sums NO \
                 --max-threads 8

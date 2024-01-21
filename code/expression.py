@@ -24,10 +24,16 @@ def z_standardize_data(merged_data):
     # Identify numeric columns excluding the first column
     numeric_columns = merged_data.iloc[:, 1:].select_dtypes(include=['float64', 'int64']).columns
 
+    # Calculate the mean and standard deviation for the entire dataset
+    dataset_mean = merged_data.loc[:, numeric_columns].mean().mean()
+    dataset_std = merged_data.loc[:, numeric_columns].std().std()
+
     # Standardize each value using the mean and standard deviation of the entire dataset for numeric columns
-    merged_data.loc[:, numeric_columns] = (merged_data.loc[:, numeric_columns] - merged_data.loc[:, numeric_columns].mean()) / merged_data.loc[:, numeric_columns].std()
+    merged_data.loc[:, numeric_columns] = (merged_data.loc[:, numeric_columns] - dataset_mean) / dataset_std
 
     zscored_data = merged_data
+
+    return zscored_data
 
 def create_tissue_subfolders(zscored_data, output_folder):
     tissue_info = []
